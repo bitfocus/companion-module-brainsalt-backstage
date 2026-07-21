@@ -1,7 +1,7 @@
-import { InstanceBase, InstanceStatus, runEntrypoint, } from '@companion-module/base';
+import { InstanceBase, InstanceStatus, runEntrypoint } from '@companion-module/base';
 import { getConfigFields, DefaultConfig } from './config.js';
 import { ShowControlConnection } from './showControlConnection.js';
-import { buildShowControlDefs, scAllVariableValues, scVariableValuesFor, SC_FEEDBACK_IDS, } from './showControlDefs.js';
+import { buildShowControlDefs, scAllVariableValues, scVariableValuesFor, SC_FEEDBACK_IDS } from './showControlDefs.js';
 class BackstageModule extends InstanceBase {
     sc = null;
     async init(config) {

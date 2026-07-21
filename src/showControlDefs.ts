@@ -108,7 +108,11 @@ function clampToMeta(ep: NodeEndpoint | undefined, v: number): number {
 	return v
 }
 
-function targetChoices(sc: ShowControlConnection, domain: ShowControlDomain, filter?: (e: never) => boolean): DropdownChoice[] {
+function targetChoices(
+	sc: ShowControlConnection,
+	domain: ShowControlDomain,
+	filter?: (e: never) => boolean,
+): DropdownChoice[] {
 	const out: DropdownChoice[] = []
 	for (const name of sc.entities.get(domain)?.keys() ?? []) {
 		if (filter && !filter(sc.entities.get(domain)!.get(name) as never)) continue
@@ -117,7 +121,12 @@ function targetChoices(sc: ShowControlConnection, domain: ShowControlDomain, fil
 	return out
 }
 
-function targetOption(sc: ShowControlConnection, domain: ShowControlDomain, label: string, filter?: (e: never) => boolean) {
+function targetOption(
+	sc: ShowControlConnection,
+	domain: ShowControlDomain,
+	label: string,
+	filter?: (e: never) => boolean,
+) {
 	const choices = targetChoices(sc, domain, filter)
 	return {
 		type: 'dropdown' as const,
@@ -602,7 +611,8 @@ function buildActions(sc: ShowControlConnection): CompanionActionDefinitions {
 
 	actions['sc_node_send'] = {
 		name: 'Node: Send Value',
-		description: 'Send a raw value to any settable node endpoint (Remote Control In, labelled datatype node, CompanionIO). Supports Companion variables.',
+		description:
+			'Send a raw value to any settable node endpoint (Remote Control In, labelled datatype node, CompanionIO). Supports Companion variables.',
 		options: [
 			nodeTargetOption(sc, (ep) => ep.dir !== 'out'),
 			{ type: 'textinput', id: 'value', label: 'Value', default: '', useVariables: true },
@@ -645,7 +655,8 @@ function buildActions(sc: ShowControlConnection): CompanionActionDefinitions {
 
 	actions['sc_node_number_adjust'] = {
 		name: 'Control: Adjust Number',
-		description: 'Add a step to a Float/Int control (clamped to its min/max). Use on buttons or encoder rotate_left/right. Step 0 uses the control\'s own step size (negate with direction).',
+		description:
+			"Add a step to a Float/Int control (clamped to its min/max). Use on buttons or encoder rotate_left/right. Step 0 uses the control's own step size (negate with direction).",
 		options: [
 			nodeTargetOption(sc, (ep) => ep.type === 'float' || ep.type === 'int'),
 			{
@@ -1397,9 +1408,7 @@ function buildPresets(sc: ShowControlConnection, LBL: string): CompanionPresetDe
 					category,
 					name: `${name} next`,
 					style: { text: `${name}\\n>>`, size: 'auto', color: white, bgcolor: combineRgb(0, 60, 0) },
-					steps: [
-						{ down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'next' } }], up: [] },
-					],
+					steps: [{ down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'next' } }], up: [] }],
 					feedbacks: [],
 				}
 				presets[pid('node', name, 'prev')] = {
@@ -1407,9 +1416,7 @@ function buildPresets(sc: ShowControlConnection, LBL: string): CompanionPresetDe
 					category,
 					name: `${name} prev`,
 					style: { text: `${name}\\n<<`, size: 'auto', color: white, bgcolor: combineRgb(60, 0, 0) },
-					steps: [
-						{ down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'prev' } }], up: [] },
-					],
+					steps: [{ down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'prev' } }], up: [] }],
 					feedbacks: [],
 				}
 				for (let i = 0; i < (ep.choices?.length ?? 0); i++) {

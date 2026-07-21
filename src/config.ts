@@ -18,7 +18,8 @@ export function getConfigFields(): SomeCompanionConfigField[] {
 			type: 'static-text',
 			id: 'info',
 			label: 'Setup',
-			value: 'Connects to the Backstage show-control protocol. In Backstage, check "Enable Show-Control Protocol" under Settings → Remote Control (and Apply / Restart Protocol Server). Steppers, sequencers, broadcast schedulers, calibrators, audio mixers, NDI inputs and remote-control nodes are discovered automatically — no graph nodes required. Add CompanionIO nodes (UI category) for custom typed controls: buttons, faders, toggles, enums and colors.',
+			value:
+				'Connects to the Backstage show-control protocol. In Backstage, check "Enable Show-Control Protocol" under Settings → Remote Control (and Apply / Restart Protocol Server). Steppers, sequencers, broadcast schedulers, calibrators, audio mixers, NDI inputs and remote-control nodes are discovered automatically — no graph nodes required. Add CompanionIO nodes (UI category) for custom typed controls: buttons, faders, toggles, enums and colors.',
 			width: 12,
 		},
 		{

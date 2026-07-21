@@ -582,7 +582,7 @@ function buildActions(sc) {
     };
     actions['sc_node_number_adjust'] = {
         name: 'Control: Adjust Number',
-        description: 'Add a step to a Float/Int control (clamped to its min/max). Use on buttons or encoder rotate_left/right. Step 0 uses the control\'s own step size (negate with direction).',
+        description: "Add a step to a Float/Int control (clamped to its min/max). Use on buttons or encoder rotate_left/right. Step 0 uses the control's own step size (negate with direction).",
         options: [
             nodeTargetOption(sc, (ep) => ep.type === 'float' || ep.type === 'int'),
             {
@@ -1300,9 +1300,7 @@ function buildPresets(sc, LBL) {
                     category,
                     name: `${name} next`,
                     style: { text: `${name}\\n>>`, size: 'auto', color: white, bgcolor: combineRgb(0, 60, 0) },
-                    steps: [
-                        { down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'next' } }], up: [] },
-                    ],
+                    steps: [{ down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'next' } }], up: [] }],
                     feedbacks: [],
                 };
                 presets[pid('node', name, 'prev')] = {
@@ -1310,9 +1308,7 @@ function buildPresets(sc, LBL) {
                     category,
                     name: `${name} prev`,
                     style: { text: `${name}\\n<<`, size: 'auto', color: white, bgcolor: combineRgb(60, 0, 0) },
-                    steps: [
-                        { down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'prev' } }], up: [] },
-                    ],
+                    steps: [{ down: [{ actionId: 'sc_node_enum_step', options: { target: name, direction: 'prev' } }], up: [] }],
                     feedbacks: [],
                 };
                 for (let i = 0; i < (ep.choices?.length ?? 0); i++) {

@@ -43,15 +43,6 @@ The connection appears in **Connections → Add connection** with a *Dev* badge.
 > Dependencies are not committed. After cloning, run `npm install` before loading the
 > module in Companion, or it will fail with `Cannot find module '@companion-module/base'`.
 
-## Releasing
-
-Versions are published through the [Bitfocus Developer Portal](https://developer.bitfocus.io/):
-
-1. Bump the version in `package.json` (semver).
-2. Tag the release `vX.Y.Z` and push the tag.
-3. In the Developer Portal → **My Connections** → this module → **Submit Version** →
-   choose the tag → **Submit** for review.
-
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE). © 2026 Brainsalt Media GmbH

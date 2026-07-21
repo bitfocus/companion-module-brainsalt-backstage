@@ -126,7 +126,10 @@ export class ShowControlConnection {
 	sendAction(domain: ShowControlDomain, action: string, target?: string, args?: Record<string, unknown>): void {
 		this.request({ domain, action, ...(target !== undefined ? { target } : {}), ...(args ? { args } : {}) }, (resp) => {
 			if (!resp.ok) {
-				this.callbacks.log('warn', `Show control: ${domain}.${action} '${target ?? ''}' failed: ${resp.error?.message ?? 'unknown error'}`)
+				this.callbacks.log(
+					'warn',
+					`Show control: ${domain}.${action} '${target ?? ''}' failed: ${resp.error?.message ?? 'unknown error'}`,
+				)
 			}
 		})
 	}
@@ -171,8 +174,7 @@ export class ShowControlConnection {
 				for (const item of resp.result.items) {
 					if (item && typeof item.name === 'string') fresh.set(item.name, item)
 				}
-				const setChanged =
-					fresh.size !== cache.size || [...fresh.keys()].some((n) => !cache.has(n))
+				const setChanged = fresh.size !== cache.size || [...fresh.keys()].some((n) => !cache.has(n))
 				this.entities.set(domain, fresh)
 				if (setChanged) this.notifyEntitiesChanged()
 				else for (const name of fresh.keys()) this.callbacks.onStatusUpdate(domain, name)
@@ -216,7 +218,7 @@ export class ShowControlConnection {
 			const isNew = !cache.has(ev.status.name)
 			// Merge over the cached entry: events may carry a partial shape (e.g. node
 			// events have no 'dir'), and list results hold fields events don't re-send.
-			cache.set(ev.status.name, { ...(cache.get(ev.status.name) ?? {}), ...ev.status } as typeof ev.status)
+			cache.set(ev.status.name, { ...(cache.get(ev.status.name) ?? {}), ...ev.status })
 			if (isNew) this.notifyEntitiesChanged()
 			else this.callbacks.onStatusUpdate(ev.domain, ev.status.name)
 			return

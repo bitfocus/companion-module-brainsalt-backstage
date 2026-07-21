@@ -1,17 +1,7 @@
-import {
-	InstanceBase,
-	InstanceStatus,
-	runEntrypoint,
-	type SomeCompanionConfigField,
-} from '@companion-module/base'
+import { InstanceBase, InstanceStatus, runEntrypoint, type SomeCompanionConfigField } from '@companion-module/base'
 import { getConfigFields, DefaultConfig, type BackstageConfig } from './config.js'
 import { ShowControlConnection } from './showControlConnection.js'
-import {
-	buildShowControlDefs,
-	scAllVariableValues,
-	scVariableValuesFor,
-	SC_FEEDBACK_IDS,
-} from './showControlDefs.js'
+import { buildShowControlDefs, scAllVariableValues, scVariableValuesFor, SC_FEEDBACK_IDS } from './showControlDefs.js'
 
 class BackstageModule extends InstanceBase<BackstageConfig> {
 	private sc: ShowControlConnection | null = null
@@ -32,11 +22,7 @@ class BackstageModule extends InstanceBase<BackstageConfig> {
 
 	async configUpdated(config: BackstageConfig): Promise<void> {
 		if (this.sc) {
-			this.sc.updateConfig(
-				config.host || DefaultConfig.host,
-				config.port || DefaultConfig.port,
-				config.token ?? '',
-			)
+			this.sc.updateConfig(config.host || DefaultConfig.host, config.port || DefaultConfig.port, config.token ?? '')
 		} else {
 			this.startConnection(config)
 		}

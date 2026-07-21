@@ -78,13 +78,7 @@ export interface NodeEndpoint {
 
 /** Any entity status, keyed by its `name` */
 export type EntityStatus =
-	| StepperStatus
-	| SequencerStatus
-	| BroadcastStatus
-	| CalibratorStatus
-	| MixerStatus
-	| NdiInputStatus
-	| NodeEndpoint
+	StepperStatus | SequencerStatus | BroadcastStatus | CalibratorStatus | MixerStatus | NdiInputStatus | NodeEndpoint
 
 export interface ShowControlEvent {
 	type: 'event'
