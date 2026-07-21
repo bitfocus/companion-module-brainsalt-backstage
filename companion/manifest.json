@@ -1,0 +1,26 @@
+{
+	"id": "brainsalt-backstage",
+	"name": "Brainsalt Backstage",
+	"shortname": "Backstage",
+	"description": "Control Brainsalt Backstage media server via its show-control protocol",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": "https://github.com/BRAINSALT/companion-module-brainsalt-backstage",
+	"bugs": "https://github.com/BRAINSALT/companion-module-brainsalt-backstage/issues",
+	"maintainers": [
+		{
+			"name": "Brainsalt",
+			"email": "office@brainsalt.com"
+		}
+	],
+	"legacyIds": [],
+	"manufacturer": "Brainsalt",
+	"products": ["Backstage"],
+	"keywords": ["brainsalt", "backstage", "media server", "projection mapping"],
+	"runtime": {
+		"type": "node18",
+		"api": "nodejs-ipc",
+		"apiVersion": "1.14.0",
+		"entrypoint": "../dist/main.js"
+	}
+}

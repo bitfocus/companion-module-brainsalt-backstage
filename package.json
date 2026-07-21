@@ -1,0 +1,29 @@
+{
+	"name": "companion-module-brainsalt-backstage",
+	"version": "1.0.0",
+	"description": "Bitfocus Companion module for Brainsalt Backstage media server",
+	"main": "dist/main.js",
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"lint": "eslint src/",
+		"package": "tsc && companion-module-build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BRAINSALT/companion-module-brainsalt-backstage.git"
+	},
+	"bugs": {
+		"url": "https://github.com/BRAINSALT/companion-module-brainsalt-backstage/issues"
+	},
+	"author": "Brainsalt Media GmbH <office@brainsalt.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@companion-module/base": "~1.14.0"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^2.1.0",
+		"typescript": "~5.6.0"
+	}
+}
