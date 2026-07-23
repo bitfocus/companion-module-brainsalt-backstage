@@ -5,8 +5,8 @@
 	"description": "Control Brainsalt Backstage media server via its show-control protocol",
 	"version": "1.0.0",
 	"license": "MIT",
-	"repository": "https://github.com/BRAINSALT/companion-module-brainsalt-backstage",
-	"bugs": "https://github.com/BRAINSALT/companion-module-brainsalt-backstage/issues",
+	"repository": "https://github.com/bitfocus/companion-module-brainsalt-backstage",
+	"bugs": "https://github.com/bitfocus/companion-module-brainsalt-backstage/issues",
 	"maintainers": [
 		{
 			"name": "Brainsalt",

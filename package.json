@@ -12,10 +12,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/BRAINSALT/companion-module-brainsalt-backstage.git"
+		"url": "git+https://github.com/bitfocus/companion-module-brainsalt-backstage.git"
 	},
 	"bugs": {
-		"url": "https://github.com/BRAINSALT/companion-module-brainsalt-backstage/issues"
+		"url": "https://github.com/bitfocus/companion-module-brainsalt-backstage/issues"
 	},
 	"author": "Brainsalt Media GmbH <office@brainsalt.com>",
 	"license": "MIT",
