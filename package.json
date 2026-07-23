@@ -1,6 +1,6 @@
 {
 	"name": "companion-module-brainsalt-backstage",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Bitfocus Companion module for Brainsalt Backstage media server",
 	"main": "dist/main.js",
 	"type": "module",
