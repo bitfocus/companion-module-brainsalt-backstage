@@ -3,7 +3,7 @@
 	"name": "Brainsalt Backstage",
 	"shortname": "Backstage",
 	"description": "Control Brainsalt Backstage media server via its show-control protocol",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"license": "MIT",
 	"repository": "https://github.com/bitfocus/companion-module-brainsalt-backstage",
 	"bugs": "https://github.com/bitfocus/companion-module-brainsalt-backstage/issues",
