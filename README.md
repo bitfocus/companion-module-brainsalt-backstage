@@ -20,14 +20,15 @@ audio mixers, NDI inputs, node endpoints) are discovered automatically.
 ## Development
 
 ```sh
-npm install      # install dependencies (required — node_modules is not committed)
-npm run build    # compile TypeScript src/ -> dist/
-npm run dev      # watch-compile while developing
-npm run lint     # eslint
-npm run package  # build + pack an importable .tgz (companion-module-build)
+corepack enable  # once per machine - provides the pinned yarn version
+yarn             # install dependencies (required — node_modules is not committed)
+yarn build       # compile TypeScript src/ -> dist/
+yarn dev         # watch-compile while developing
+yarn lint        # eslint
+yarn package     # build + pack an importable .tgz (companion-module-build)
 ```
 
-`npm run package` writes `pkg/` and a `.tgz` (both gitignored). The `.tgz` can be imported
+`yarn package` writes `pkg/` and a `.tgz` (both gitignored). The `.tgz` can be imported
 into any Companion ≥3.4 via **Modules → Import module package** — useful for sharing test
 builds without the module store or a dev setup.
 
@@ -40,7 +41,7 @@ In the Companion **launcher** window → gear/**Settings** → **Developer modul
 point it at the folder that *contains* this module directory, then restart Companion.
 The connection appears in **Connections → Add connection** with a *Dev* badge.
 
-> Dependencies are not committed. After cloning, run `npm install` before loading the
+> Dependencies are not committed. After cloning, run `yarn` before loading the
 > module in Companion, or it will fail with `Cannot find module '@companion-module/base'`.
 
 ## License
