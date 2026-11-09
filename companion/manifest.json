@@ -18,7 +18,7 @@
 	"products": ["Backstage"],
 	"keywords": ["brainsalt", "backstage", "media server", "projection mapping"],
 	"runtime": {
-		"type": "node18",
+		"type": "node26",
 		"api": "nodejs-ipc",
 		"apiVersion": "1.14.0",
 		"entrypoint": "../dist/main.js"
